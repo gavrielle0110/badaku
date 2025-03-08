@@ -587,7 +587,7 @@ body {
   }
   100% {
     width: 480px;
-    height: 600px;
+    height: 800px;
     background: rgba(250, 250, 250);
    
   }
@@ -595,7 +595,7 @@ body {
 @keyframes popupAnimeClose {
   0% {
       width: 480px;
-    height: 600px;
+    height: 800px;
     background: rgba(250, 250, 250);
   
   }
