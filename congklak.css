@@ -448,6 +448,9 @@ body {
 
 @media screen and (max-width: 768px) {
 /* Reset */
+html{
+  overflow-x: hidden;
+}
 * {
   
   box-sizing: border-box;
@@ -455,6 +458,7 @@ body {
 }
 
 /* Body */
+
 body {
   margin: 0;
   padding: 0;
@@ -513,7 +517,6 @@ body {
   margin-top: 100px;
 }
 .main {
-
   display: block;
   padding: 20px;
 }
