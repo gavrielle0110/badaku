@@ -447,199 +447,198 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-/* Reset */
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
-* {
-  max-width: 100vw; /* Batasi semua elemen agar tidak lebih dari viewport */
-}
-
-
-/* Body */
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  background-image: url("source/pexels-yuanpang-wa-406313444-15090856.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 140vh;
-  overflow-x: hidden;
-}
-.background-filter {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 0;
-}
-/* ========== HEADER ========== */
-.heads {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background: white;
-  border-bottom: 2px solid black;
-  position: relative;
-  height: 60px;
-}
-
-.iden{
-  font-size: 1rem;
-  margin-left: 5px;
-  margin-bottom: 20px ;
-}
-
-.title {
-  font-size: 1.2rem;
-  text-align: center;
-  font-weight: bold;
-  transform: translateX(-150%);
-  margin-bottom: 20px ;
-}
-
-.setting {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;  /* Lebih mentok ke kanan */
-  margin-bottom: 20px ;
-}
-
-/* ========== HOME SECTION ========== */
-.container{
-  margin-top: 100px;
-}
-.main {
-  display: block;
-  padding: 20px;
-}
-.home{ 
-  transform: translateX(-10%);
-  margin-top: 140px;
-  width: 270px;
-  height: 670px;
-}
-.box {
-  max-width: 225px;  /* Ukuran box lebih kecil */
-  padding-top: 50px;
-  background: white;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-.popup-story {
-  display: none;
-  position: absolute;
-  top: 25%;
-  left: 70px;
-  background-color: #fff;
-  width: 80%;
-  max-width: 240px;
-  max-height: 630px ;
-  padding: 20px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  border-radius: 8px;
-  z-index: 1000;
-}
-.popup-story.show {
-  display: block;
-  animation: popupAnime 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.popup-story.close {
-  animation: popupAnimeClose 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.popup-story h1 {
-  margin: 10px;
-  font-size: 1.5rem;
-}
-.popup-story p {
-  margin: 10px;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-@keyframes popupAnime {
-  0% {
-    width: 0px;
-    height: 0px;
-    background: rgba(240, 240, 240,0);
-  
+  /* Reset */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
   }
-  25% {
-    width: 60px;
+  
+  * {
+    max-width: 100vw; /* Batasi semua elemen agar tidak lebih dari viewport */
+  }
+  
+  
+  /* Body */
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background-image: url("source/pexels-yuanpang-wa-406313444-15090856.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 140vh;
+    overflow-x: hidden;
+  }
+  .background-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+  }
+  /* ========== HEADER ========== */
+  .heads {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    border-bottom: 2px solid black;
+    position: relative;
     height: 60px;
-    background: rgba(248, 248, 248,0.33);
+  }
   
+  .iden{
+    font-size: 1rem;
+    margin-left: 5px;
+    margin-bottom: 20px ;
   }
-  50% {
-    width: 60px;
-    height: 240px;
-    background: rgba(248, 248, 248,0.66);
- 
-  }
-  100% {
-    width: 480px;
-    height: 1000px;
-    background: rgba(250, 250, 250);
-   
-  }
-}
-@keyframes popupAnimeClose {
-  0% {
-      width: 480px;
-    height: 1000px;
-    background: rgba(250, 250, 250);
   
+  .title {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+    transform: translateX(-150%);
+    margin-bottom: 20px ;
   }
-  25% {
-      width: 60px;
-      height: 240px;
-      background: rgba(248, 248, 248,0.66);
-      
+  
+  .setting {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;  /* Lebih mentok ke kanan */
+    margin-bottom: 20px ;
   }
-  50% {
-      width: 60px;
-    height: 60px;
-    background: rgba(248, 248, 248,0.33);
-   
-    
+  
+  /* ========== HOME SECTION ========== */
+  .container{
+    margin-top: 100px;
   }
-  100% {
+  .main {
+    display: block;
+    padding: 20px;
+  }
+  .home{ 
+    transform: translateX(-10%);
+    margin-top: 140px;
+    width: 270px;
+    height: 670px;
+  }
+  .box {
+    max-width: 225px;  /* Ukuran box lebih kecil */
+    padding-top: 50px;
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .popup-story {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 70px;
+    background-color: #fff;
+    width: 80%;
+    max-width: 240px;
+    max-height: 630px ;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    z-index: 1000;
+  }
+  .popup-story.show {
+    display: block;
+    animation: popupAnime 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .popup-story.close {
+    animation: popupAnimeClose 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .popup-story h1 {
+    margin: 10px;
+    font-size: 1.5rem;
+  }
+  .popup-story p {
+    margin: 10px;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  @keyframes popupAnime {
+    0% {
       width: 0px;
       height: 0px;
       background: rgba(240, 240, 240,0);
-      
+  
+    }
+    25% {
+      width: 60px;
+      height: 60px;
+      background: rgba(248, 248, 248,0.33);
+  
+    }
+    50% {
+      width: 60px;
+      height: 240px;
+      background: rgba(248, 248, 248,0.66);
+  
+    }
+    100% {
+      width: 480px;
+      height: 1000px;
+      background: rgba(250, 250, 250);
+  
+    }
   }
-}
-/* Tombol */
-.btn {
-  display: inline-block;
-  padding: 8px 12px;
-  margin-top: 5px;
-  background: limegreen;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 5px;
-}
-.game-container{
-  margin-top: 30px;
-  transform: scale(0.8) rotate(90deg);
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
-.indicator{
-  margin-left: -5px;
-  margin-top: -50px;
-}
+  @keyframes popupAnimeClose {
+    0% {
+        width: 480px;
+      height: 1000px;
+      background: rgba(250, 250, 250);
+  
+    }
+    25% {
+        width: 60px;
+        height: 240px;
+        background: rgba(248, 248, 248,0.66);
+  
+    }
+    50% {
+        width: 60px;
+      height: 60px;
+      background: rgba(248, 248, 248,0.33);
+  
+  
+    }
+    100% {
+        width: 0px;
+        height: 0px;
+        background: rgba(240, 240, 240,0);
+  
+    }
+  }
+  /* Tombol */
+  .btn {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-top: 5px;
+    background: limegreen;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .game-container{
+    margin-top: 30px;
+    transform: scale(0.8) rotate(90deg);
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  .indicator{
+    margin-left: -5px;
+    margin-top: -50px;
+  }
 }
