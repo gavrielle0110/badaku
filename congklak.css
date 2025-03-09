@@ -544,7 +544,7 @@ body {
   background-color: #fff;
   width: 80%;
   max-width: 240px;
-  max-height: 420px ;
+  max-height: 630px ;
   padding: 20px;
   border: 1px solid #ccc;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
@@ -631,12 +631,19 @@ body {
   text-decoration: none;
   border-radius: 5px;
 }
-.game-container{
-  margin-top: 30px;
-  transform: scale(0.8) rotate(90deg);
-  overflow-x: hidden;
-  max-width: 100vw;
+.game-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8) rotate(90deg);
+  transform-origin: center center;
+  width: 100vh; /* Gunakan tinggi sebagai lebar setelah rotasi */
+  height: 100vw; /* Gunakan lebar sebagai tinggi setelah rotasi */
+  max-width: 100vh;
+  max-height: 100vw;
+  overflow: hidden;
 }
+
 .indicator{
   margin-left: -5px;
   margin-top: -50px;
