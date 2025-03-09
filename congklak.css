@@ -631,8 +631,8 @@ body {
     text-decoration: none;
     border-radius: 5px;
   }
+
   .game-container {
-    .game-container {
       position: fixed;
       top: 50%;
       left: 50%;
@@ -645,7 +645,7 @@ body {
       overflow: visible;
   }
   
-}
+
 .store {
   width: auto !important; 
   height: auto !important;
@@ -658,5 +658,6 @@ body {
     margin-left: -5px;
     margin-top: -50px;
   }
-}
 
+  
+}
