@@ -631,15 +631,16 @@ body {
     text-decoration: none;
     border-radius: 5px;
   }
-  .game-container{
+  .game-container {
     margin-top: 30px;
     transform: rotate(90deg);
     transform-origin: center;
-    width: 80vh; /* Lebar lebih kecil dari layar */
-    height: 80vw; /* Tinggi lebih kecil dari layar */
-    overflow-x: hidden;
+    width: 80vh;
+    height: 80vw;
+    overflow: visible;
     position: fixed;
-  }
+}
+
   .indicator{
     margin-left: -5px;
     margin-top: -50px;
