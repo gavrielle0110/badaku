@@ -637,8 +637,10 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) rotate(90deg);
   transform-origin: center center;
-  width: min(100vw, 100vh); /* Sesuaikan ukuran agar tidak over-limit */
-  height: min(100vh, 100vw);
+  width: min(100vh, 80vw); /* Sesuaikan ukuran agar tidak over-limit */
+  height: min(100vw, 80vh);
+  max-width: none;
+  max-height: none;
   overflow: hidden;
 }
 
