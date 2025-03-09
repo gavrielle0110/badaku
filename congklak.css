@@ -632,13 +632,26 @@ body {
     border-radius: 5px;
   }
   .game-container {
-    margin-top: 30px;
-    transform: rotate(90deg);
-    transform-origin: center;
-    width: 80vh;
-    height: 80vw;
-    overflow: visible;
-    position: fixed;
+    .game-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(90deg);
+      transform-origin: center center;
+      width: 80vh;
+      height: 80vw;
+      max-width: 100vh;
+      max-height: 100vw;
+      overflow: visible;
+  }
+  
+}
+.store {
+  width: auto !important; 
+  height: auto !important;
+  min-width: 10vh;  /* Sesuaikan dengan ukuran normal rumah */
+  min-height: 10vw;  
+  text-align: center;
 }
 
   .indicator{
