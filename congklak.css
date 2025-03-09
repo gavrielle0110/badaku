@@ -632,7 +632,10 @@ body {
   border-radius: 5px;
 }
 .game-container {
-  transform: translate(-50%, -50%) scale(0.8) rotate(90deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
   transform-origin: center center;
   width: 100vh; /* Gunakan tinggi sebagai lebar setelah rotasi */
   height: 100vw; /* Gunakan lebar sebagai tinggi setelah rotasi */
