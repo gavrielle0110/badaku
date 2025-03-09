@@ -637,10 +637,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) rotate(90deg);
   transform-origin: center center;
-  width: 100vh; /* Gunakan tinggi sebagai lebar setelah rotasi */
-  height: 100vw; /* Gunakan lebar sebagai tinggi setelah rotasi */
-  max-width: 100vh;
-  max-height: 100vw;
+  width: min(100vw, 100vh); /* Sesuaikan ukuran agar tidak over-limit */
+  height: min(100vh, 100vw);
   overflow: hidden;
 }
 
