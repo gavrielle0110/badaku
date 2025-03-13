@@ -73,7 +73,30 @@ window.addEventListener("DOMContentLoaded", () => {
     observerNavbar.observe(firstSection);
 });
 
-document.getElementById("menu-btn").addEventListener("click", function() {
-    const menu = document.getElementById("mobile-menu");
-    menu.classList.toggle("hidden");
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.getElementById('hamburger');
+    const menubar = document.querySelector('.menubar');
+
+    // Toggle menu
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menubar.classList.toggle('active');
+        hamburger.classList.toggle('hamburger-active');
+    });
+
+    // Close menu klik di luar
+    document.addEventListener('click', function(e) {
+        if (!menubar.contains(e.target) && !hamburger.contains(e.target)) {
+            menubar.classList.remove('active');
+            hamburger.classList.remove('hamburger-active');
+        }
+    });
+
+    // Close menu saat resize window ke desktop
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            menubar.classList.remove('active');
+            hamburger.classList.remove('hamburger-active');
+        }
+    });
 });

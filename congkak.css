@@ -14,7 +14,87 @@ html, body {
     scroll-behavior: smooth; /* Efek smooth scroll */
     overflow-y: scroll;
 }
+.hamburger {
+    display: none; /* Tetap sembunyi di desktop */
+    cursor: pointer;
+    z-index: 10;
+}
 
+  
+  .hamburger .line {
+    width: 25px;
+    height: 1px;
+    background-color: #ECDFCC;
+    display: block;
+    margin: 7px auto;
+    transition: all 0.3s ease-in-out;
+  }
+  .hamburger-active {
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.6s;
+  }
+  
+  .hamburger-active .line:nth-child(2) {
+    width: 0px;
+  }
+  
+  .hamburger-active .line:nth-child(1),
+  .hamburger-active .line:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  
+  .hamburger-active .line:nth-child(1) {
+    transform: translateY(12px);
+  }
+  
+  .hamburger-active .line:nth-child(3) {
+    transform: translateY(-5px) rotate(90deg);
+  }
+  
+  .menubar {
+    position: absolute;
+    top: 0;
+    left: -100%; /* Awalnya di luar layar */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 40%;
+    padding: 10% 0;
+    background: rgb(105, 117, 101,0.4);
+    transition: left 0.5s ease; /* Perubahan untuk animasi sliding */
+    z-index: 2;
+    border-bottom-right-radius: 5px;
+    backdrop-filter: blur(15px);
+  }
+  
+  .menubar.active {
+    left: 0; /* Ketika aktif, tampilkan di layar */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  .open{
+    left: 0;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  .menubar ul {
+    padding: 0;
+    list-style: none;
+  }
+  .menubar ul li {
+    margin-bottom: 32px;
+  }
+  
+  .menubar ul li a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 95%;
+    font-weight: 400;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .menubar ul li a:hover {
+    background-color: rgba(37, 34, 34, 0.575);
+  }
 .second-page{
     min-height: 100vh;
     background: linear-gradient(120deg, #F2E2B1, #D5C7A3, #BDB395 );
@@ -261,5 +341,25 @@ model-viewer {
         margin: 10px auto;
         position: static;
         text-align: center;
+    }
+    .hamburger {
+        display: block; /* Tampilkan hanya di mobile */
+        top: 1.5rem; /* Sesuaikan posisi */
+        right: 1rem;
+        padding: 0.5rem;
+        width: auto;
+    }
+    
+    .hamburger .line {
+        background-color: #000; /* Warna lebih kontras */
+        width: 30px;
+        height: 3px;
+    }
+    
+    .menubar {
+        width: 70%; /* Lebar lebih sesuai untuk mobile */
+        height: 100vh; /* Penuh vertikal */
+        top: 0;
+        padding-top: 5rem;
     }
 }
