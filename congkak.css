@@ -59,10 +59,11 @@ html, body {
     justify-content: center;
     align-items: flex-start;
     width: 40%;
+    height: 60vh;
     padding: 10% 0;
     background: rgb(105, 117, 101,0.4);
     transition: left 0.5s ease; /* Perubahan untuk animasi sliding */
-    z-index: 2;
+    z-index: 999;
     border-bottom-right-radius: 5px;
     backdrop-filter: blur(15px);
   }
@@ -357,7 +358,7 @@ model-viewer {
     }
     
     .menubar {
-        width: 70%; /* Lebar lebih sesuai untuk mobile */
+        width: 50%; /* Lebar lebih sesuai untuk mobile */
         height: 100vh; /* Penuh vertikal */
         top: 0;
         padding-top: 5rem;
