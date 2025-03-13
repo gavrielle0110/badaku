@@ -322,12 +322,28 @@ model-viewer {
 
     /* Card styling */
     .thecard {
-        width: 90%;
-        height: auto;
+        width: 30%;
+        height: 40%;
         position: static;
         margin: 10px auto;
     }
+    .tcard1,.tcard2, .tcard3, .tcard4{
+        transform: scale(0.6);
+    }
 .bait{
+    display: none;
+}
+.box{
+    transform: scale(0.5);
+}
+.d-congklak{
+    transform: scale(0.5);
+}
+.title-2{
+    font-size: large;
+    transform: translateX(0%) translateY(10%);
+}
+.animate-right{
     display: none;
 }
     /* Model viewer */
@@ -338,7 +354,7 @@ model-viewer {
 
     /* Info boxes */
     .box {
-        width: 90%;
+        transform: scale(0.6);
         margin: 10px auto;
         position: static;
         text-align: center;
