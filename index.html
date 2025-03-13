@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Gen Kalimantan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="congkak.css">
+    <script src="congkak.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body class="bg-white/10 backdrop-blur-[0.35px]">
+    <div class="main-container">
+        <!-- navbar -->
+        <div class="flex justify-center">
+            <nav class="fixed z-10 top-5 w-full bg-white shadow-lg rounded-2xl flex justify-between items-center px-10 py-3 max-w-screen-xl mx-auto">
+                <!-- Logo -->
+                <div class="text-black font-bold text-xl">ClassXIB</div>
+                <!-- Hamburger Menu -->
+<div class="md:hidden">
+    <button id="menu-btn" class="text-black text-2xl focus:outline-none">
+        ☰
+    </button>
+</div>
+
+<!-- Mobile Menu -->
+<ul id="mobile-menu" class="hidden absolute top-14 right-0 bg-white shadow-md rounded-lg p-4 space-y-4 w-40 text-black font-semibold">
+    <li><a href="index2.html" target="_blank">Features</a></li>
+    <li><a href="index2.html" target="_blank">About Us</a></li>
+    <li><a href="https://wa.me/085220601860" target="_blank">Contact</a></li>
+</ul>
+                <!-- Menu -->
+                <ul class="hidden md:flex space-x-6 text-black font-semibold">
+                    <li class="hover:text-gray-600 cursor-pointer"><a href="index2.html" target="_blank" style="text-decoration: none;">Features</a></li>
+                    <li class="hover:text-gray-600 cursor-pointer"><a href="index2.html" target="_blank" style="text-decoration: none;">About Us</a></li>
+                    <li class="hover:text-gray-600 cursor-pointer"><a href="https://wa.me/085220601860" target="_blank" style="text-decoration: none;">Contact</a></li>
+                </ul>
+        
+                <!-- Button -->
+                <button class="bait bg-black text-white px-5 py-2 rounded-full font-semibold hover:bg-gray-800">
+                    <a href="index2.html" target="_blank" style="text-decoration: none;">EXPLORE MORE</a>
+                </button>
+            </nav>
+        </div>
+        <!-- end navbar -->
+         <!-- section 1 = welcome -->
+         <section class="section main-page py-[200px] mb-[20px]">
+            <div class="container mx-auto px-6 text-center">
+                <!-- Main Heading -->
+                <h1 class="text-5xl md:text-6xl font-bold text-[#3d075f] mb-8">
+                    WELCOME TO
+                    <span class="block mt-4 text-[#3d075f]">KALIMANTAN</span>
+                </h1>
+        
+                <!-- Subtext -->
+                <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+                    A website that supports stands and contains every information about Kalimantan
+                </p>
+            </div>
+        </section>
+        <section id="trigger-section" class="section second-page bg-[#F2E2B1] h-screen relative flex justify-center items-center">
+           <div class="thecard z-10 bg-[#F6F0F0] w-[230px] h-[260px] absolute top-[50px] left-[140px] rounded-lg rounded-xl shadow-md p-4">
+            <div class="thefront"><h1>Tale of Mahakam <br> River</h1></div>
+
+            <div class="theback"><p>Tiga bersaudara merantau, namun konflik membuat si sulung pergi. Anak kedua melempar batu ke sungai, tapi gagal menghentikannya. Batu-batu itu membentuk Anak Sungai Mahakam sebagai simbol perpecahan.</p></div>
+           </div>
+           <div class="thecard z-10 bg-[#F6F0F0] w-[230px] h-[260px] absolute bottom-[50px] left-[140px] rounded-lg rounded-xl shadow-md p-4">
+            <div class="thefront"><h1>Geography of Kalimantan</h1></div>
+
+            <div class="theback"><p>Kalimantan, pulau terbesar di Indonesia, memiliki hutan tropis, pegunungan, dan sungai besar seperti Kapuas dan Mahakam. Pulau ini berbatasan dengan Malaysia di utara dan dikelilingi laut.</p></div>
+           </div>
+           <model-viewer src="low_poly_planet_earth.glb" 
+    alt="Low Poly Planet Earth"
+    auto-rotate 
+    disable-zoom
+    camera-controls 
+    style="width: 100%; height: 500px;">
+</model-viewer>
+           <div class="thecard z-10 bg-[#F6F0F0] w-[230px] h-[260px] absolute top-[50px] right-[140px] rounded-lg rounded-xl shadow-md p-4">
+            <div class="thefront"><h1>Tradition</h1></div>
+
+            <div class="theback"><p>Kalimantan memiliki budaya kaya dari suku Dayak, Banjar, dan Melayu. Tradisi uniknya termasuk Tiwah, Babukung, dan Aruh Baharin, serta seni tari, musik sape, dan kuliner khas seperti juhu singkah.</p></div>
+           </div>
+           <div class="thecard z-10 bg-[#F6F0F0] w-[230px] h-[260px] absolute bottom-[50px] right-[140px] rounded-lg rounded-xl shadow-md p-4">
+            <div class="thefront"><h1>Traditional of <br> Dwelling</h1></div>
+
+            <div class="theback"><p>Rumah panggung adalah rumah tradisional bertiang yang dirancang untuk melindungi dari banjir, binatang liar, dan meningkatkan sirkulasi udara. Biasanya terbuat dari kayu dengan atap rumbia, banyak digunakan oleh suku Dayak, Minangkabau, dan Bugis.</p></div>
+           </div>
+        </section>                
+        <section id="trigger-section" class="section third-page h-screen relative flex justify-center items-center">
+            <div class="bg-[#fafafa]/20 backdrop-blur-md shadow-xl w-[1200px] h-[550px] rounded-lg">
+                <div class="title-2 ">
+                    <h1 class="font-bold">ORIGIN OF BADAKU</h1>
+                </div>
+                <div class="box animate-left z-10 shadow-md p-4 rounded-lg rounded-xl absolute left-20 top-1/4 transform -translate-y-1/2 w-60 h-80 bg-[#e5ffc3]/90 backdrop-blur-md text-white flex justify-center items-center text-[12px] font-bold">  
+                    <div class="text-container text-[#1c4b41] text-old text-lg">HOW TO PLAY BADAKU?</div>
+                    <div class="text-container text-[#1c4b41] text-new">
+                        Dua pemain masing-masing memiliki 7 lubang kecil dan 1 lumbung. 
+                        Setiap lubang kecil berisi 7 biji, pemain mengambil dari lubangnya. 
+                        Jika biji terakhir di lumbung, dapat giliran lagi; jika di lubang kosong sendiri, ambil biji lawan.
+                        Permainan berakhir saat semua lubang kosong.
+                    </div>
+                </div>
+                <model-viewer src="dragon_congkak_board.glb" 
+    alt="Dragon Congkak Board"
+    auto-rotate 
+    disable-zoom
+    camera-controls 
+    camera-orbit="0deg 75deg 1.5m"
+    style="width: 100%; height: 500px;">
+</model-viewer>
+                <div class="box animate-right shadow-md p-4 rounded-lg rounded-xl absolute right-20 top-1/4 transform -translate-y-1/2 w-60 h-80 bg-[#eac2ff]/90 backdrop-blur-md text-white flex justify-center items-center text-[12px] font-bold">
+                    <div class="text-container text-[#531e73] text-old text-lg">WHAT IS BADAKU?</div>
+                    <div class="text-container text-[#531e73] text-new">
+                        Badaku adalah permainan congklak khas Kalimantan yang dimainkan oleh dua orang. 
+                        Permainan ini menggunakan papan dengan lubang-lubang kecil dan biji yang disebut kuwuk. 
+                        Selain strategi, Badaku juga melatih perhitungan dan ketangkasan pemain juga. 
+                        Permainan ini telah menjadi bagian dari budaya lokal.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

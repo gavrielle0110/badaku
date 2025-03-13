@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+    --font-primary: 'Inter', sans-serif;
+}
+
+*{
+    font-family: var(--font-primary);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth; /* Efek smooth scroll */
+    overflow-y: scroll;
+}
+
+.second-page{
+    min-height: 100vh;
+    background: linear-gradient(120deg, #F2E2B1, #D5C7A3, #BDB395 );
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(120deg, #fff2ec, #ffff, #e5ffc3 );
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.main-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh; /* Container sebesar layar */
+}
+
+section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    height: 100vh; /* Section harus penuh layar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sembunyikan elemen sebelum animasi */
+.animate-left, .animate-right {
+    opacity: 0;
+}
+
+/* Animasi dari kiri ke kanan */
+@keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+
+/* Animasi dari kanan ke kiri */
+@keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+
+/* Tambahkan animasi saat ter-trigger */
+.fade-in-left {
+    animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+}
+
+/* Navbar menghilang saat di Section 1 */
+.fade-out-nav {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Navbar muncul di section lainnya */
+.fade-in-nav {
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+.box {
+    position: absolute;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    transform-origin: center;
+}
+
+
+/* Animasi teks */
+/* Animasi teks */
+.text-container {
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.text-old {
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
+.text-new {
+    top: 50%;
+    transform: translateY(150%);
+    opacity: 0;
+}
+
+/* Efek hover */
+.box:hover .text-old {
+    transform: translateY(-200%);
+    opacity: 0;
+}
+
+.box:hover .text-new {
+    transform: translateY(-50%);
+    opacity: 1;
+}
+/* flip card */
+.thecard {
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* THE FRONT FACE OF THE CARD */
+.thefront, .theback {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* THE BACK FACE OF THE CARD */
+.theback {
+    transform: rotateY(180deg);
+    color: #333;
+}
+
+/* Hover Effect */
+.thecard:hover {
+    transform: rotateY(180deg);
+}
+
+/* Styling for text */
+.thefront h1 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.theback p {
+    font-weight: normal;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.title-2{
+    font-size: 2.5rem;
+    position: relative;
+    transform: translateX(34%);
+    padding-top: 25px;
+}
+model-viewer {
+    --auto-rotate-speed: 10deg; /* Ganti angka sesuai kecepatan yang diinginkan */
+}
+
+/* General mobile styling */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    .main-container {
+        padding: 10px;
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    #mobile-menu {
+        display: none;
+    }
+    /* Navbar adjustments */
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+    nav button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Section adjustments */
+    .section {
+        padding: 50px 20px;
+        text-align: center;
+    }
+    
+    .main-page h1 {
+        font-size: 32px;
+    }
+    
+    .main-page p {
+        font-size: 16px;
+    }
+
+    /* Card styling */
+    .thecard {
+        width: 90%;
+        height: auto;
+        position: static;
+        margin: 10px auto;
+    }
+.bait{
+    display: none;
+}
+    /* Model viewer */
+    model-viewer {
+        width: 100%;
+        height: 300px;
+    }
+
+    /* Info boxes */
+    .box {
+        width: 90%;
+        margin: 10px auto;
+        position: static;
+        text-align: center;
+    }
+}

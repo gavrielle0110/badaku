@@ -1,0 +1,646 @@
+* {
+  font-family: 'Piazzolla', serif;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000;
+  
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  background-image: url("source/pexels-yuanpang-wa-406313444-15090856.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.background-filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+}
+.not-background {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===================== HEADER & POPUP MENU ===================== */
+.heads {
+  display: flex;
+  width: 100%;
+  height: 70px;
+  background-color: #fff;
+  position: relative;
+}
+
+.iden{
+  margin-left: 45px; margin-top: 20px; font-size: 1.2rem;
+}
+
+.title { 
+  position: absolute;
+  left: 50%;
+  transform: translateX(-124%);
+  font-weight: bold;
+  margin-left: 95px; 
+  margin-top: 16px; 
+  font-size: 1.6rem;
+}
+.setting {
+  display: flex;
+  margin-top: 22px;
+  margin-right: 45px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+@keyframes popupAnimex {
+  0% { width: 0; height: 0; background: rgba(240,240,240,0); }
+  25% { width: 60px; height: 45px; background: rgba(248,248,248,0.33); }
+  50% { width: 120px; height: 90px; background: rgba(248,248,248,0.66); }
+  100% { width: 180px; height: 135px; background: rgba(250,250,250,1); }
+}
+@keyframes popupAnimexClose {
+  0% { width: 180px; height: 135px; background: rgba(250,250,250,1); }
+  25% { width: 120px; height: 90px; background: rgba(248,248,248,0.66); }
+  50% { width: 60px; height: 45px; background: rgba(248,248,248,0.33); }
+  100% { width: 0; height: 0; background: rgba(240,240,240,0); }
+}
+@keyframes popupAnime {
+  0% {
+    width: 0px;
+    height: 0px;
+    background: rgba(240, 240, 240,0);
+  
+  }
+  25% {
+    width: 60px;
+    height: 60px;
+    background: rgba(248, 248, 248,0.33);
+  
+  }
+  50% {
+    width: 60px;
+    height: 240px;
+    background: rgba(248, 248, 248,0.66);
+ 
+  }
+  100% {
+    width: 480px;
+    height: 450px;
+    background: rgba(250, 250, 250);
+   
+  }
+}
+@keyframes popupAnimeClose {
+  0% {
+      width: 480px;
+    height: 450px;
+    background: rgba(250, 250, 250);
+  
+  }
+  25% {
+      width: 60px;
+      height: 240px;
+      background: rgba(248, 248, 248,0.66);
+      
+  }
+  50% {
+      width: 60px;
+    height: 60px;
+    background: rgba(248, 248, 248,0.33);
+   
+    
+  }
+  100% {
+      width: 0px;
+      height: 0px;
+      background: rgba(240, 240, 240,0);
+      
+  }
+}
+@keyframes gamePopupAnimex {
+  0% { width: 0; height: 0; background: rgba(240,240,240,0); }
+  25% { width: 60px; height: 75px; background: rgba(248,248,248,0.33); }
+  50% { width: 120px; height: 150px; background: rgba(248,248,248,0.66); }
+  100% { width: 160px; height: 225px; background: rgba(250,250,250,1); }
+}
+@keyframes gamePopupAnimexclose {
+  0% { width: 160px; height: 225px; background: rgba(250,250,250,1); }
+  25% { width: 120px; height: 150px; background: rgba(248,248,248,0.66); }
+  50% { width: 60px; height: 75px; background: rgba(248,248,248,0.33); }
+  100% { width: 0; height: 0; background: rgba(240,240,240,0); }
+}
+/* Animasi fade out dan fade in */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Class untuk menerapkan animasi */
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+.fade-in {
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Gunakan animasi baru bila elemen memiliki class "in-game" */
+.in-game .popup-menu.show {
+  animation: gamePopupAnimex 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.in-game .pop-menu.close {
+  animation: gamePopupAnimexclose 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.popup-menu {
+  display: none;
+  position: absolute;
+  top: 90px;
+  right: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 1000;
+  min-width: 150px;
+  overflow: hidden;
+}
+.popup-menu.show {
+  display: block;
+  animation: popupAnimex 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.popup-menu.close {
+  animation: popupAnimexClose 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.popup-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.popup-menu li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+.popup-menu li:last-child {
+  border-bottom: none;
+}
+.popup-menu li:hover {
+  background-color: #f2f2f2;
+}
+
+/* ===================== LANDING PAGE (HOME) ===================== */
+.container {
+  padding-top: 100px;
+  display: flex;
+  margin: 50px;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 300px;
+}
+.home {
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
+  width: 600px;
+  height: 350px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.3);
+  display: flex;
+}
+.main {
+  display: flex;
+  margin: auto;
+  gap: 20px;
+}
+.box {
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
+  width: 250px;
+  height: 300px;
+  border-radius: 8px;
+  padding: 15px;
+  padding-top: 50px;
+  backdrop-filter: blur(5px);
+  background-color: #fff;
+}
+.box .cup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.start {
+  width: 190px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #00FF4C;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.button_start {
+  margin-right: 10px;
+}
+.popup-story {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 33.5%;
+  background-color: #fff;
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  z-index: 1000;
+  overflow: hidden;
+}
+.popup-story.show {
+  display: block;
+  animation: popupAnime 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.popup-story.close {
+  animation: popupAnimeClose 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.popup-story h1 {
+  margin: 10px;
+  font-size: 1.5rem;
+}
+.popup-story p {
+  margin: 10px;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* ===================== CONGKLAK SECTION ===================== */
+/* Hanya bagian game Congklak; tampilkan saat MULAI diklik */
+#congklakContainer {
+  display: none;
+  margin-top: 40px;
+  text-align: center;
+}
+.game-container {
+  /* Hilangkan transform agar board terlihat pada posisi yang wajar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.board {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(139, 69, 19);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+}
+.middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.hole {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #a0522d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+}
+.hole span {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  border-radius: 50%;
+  padding: 2px 4px;
+  z-index: 10;
+  pointer-events: none;
+}
+.kuwuk {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  transition: transform 0.3s linear;
+  z-index: 1;
+}
+.store {
+  width: 80px;
+  height: 120px;
+  background-color: #daa520;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 15px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+}
+.indicator {
+  font-size: 24px;
+  color: yellow;
+  font-weight: bold;
+  animation: move 0.5s infinite alternate ease-in-out;
+}
+.bot-indicator {
+  position: absolute;
+  bottom: 58%;
+  left: 51.265%;
+}
+.player-indicator {
+  position: absolute;
+  top: 120%;
+  left: 51.265%;
+}
+@keyframes move {
+  from { transform: translate(-50%, -5px); }
+  to { transform: translate(-50%, 5px); }
+}
+.player, .bot {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  color: #fff;
+}
+
+/* ===================== MODAL WIN ALERT ===================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 2px solid #888;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+#restartButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #8b4513;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#restartButton:hover {
+  background-color: #a0522d;
+}
+
+@media screen and (max-width: 768px) {
+  /* Reset */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  
+  /* Body */
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background-image: url("source/pexels-yuanpang-wa-406313444-15090856.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 140vh;
+    overflow-x: hidden;
+  }
+  .background-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+  }
+  /* ========== HEADER ========== */
+  .heads {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    border-bottom: 2px solid black;
+    position: relative;
+    height: 60px;
+  }
+  
+  .iden{
+    font-size: 1rem;
+    margin-left: 5px;
+    margin-bottom: 20px ;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+    transform: translateX(-150%);
+    margin-bottom: 20px ;
+  }
+  
+  .setting {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;  /* Lebih mentok ke kanan */
+    margin-bottom: 20px ;
+  }
+  
+  /* ========== HOME SECTION ========== */
+  .container{
+    margin-top: 100px;
+  }
+  .main {
+    display: block;
+    padding: 20px;
+  }
+  .home{ 
+    transform: translateX(-10%);
+    margin-top: 140px;
+    width: 270px;
+    height: 670px;
+  }
+  .box {
+    max-width: 225px;  /* Ukuran box lebih kecil */
+    padding-top: 50px;
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .popup-story {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 70px;
+    background-color: #fff;
+    width: 80%;
+    max-width: 240px;
+    max-height: 300px ;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    z-index: 1000;
+  }
+  .popup-story.show {
+    display: block;
+    animation: popupAnime 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .popup-story.close {
+    animation: popupAnimeClose 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .popup-story h1 {
+    margin: 10px;
+    font-size: 1.5rem;
+  }
+  .popup-story p {
+    margin: 10px;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  @keyframes popupAnime {
+    0% {
+      width: 0px;
+      height: 0px;
+      background: rgba(240, 240, 240,0);
+  
+    }
+    25% {
+      width: 60px;
+      height: 60px;
+      background: rgba(248, 248, 248,0.33);
+  
+    }
+    50% {
+      width: 60px;
+      height: 240px;
+      background: rgba(248, 248, 248,0.66);
+  
+    }
+    100% {
+      width: 480px;
+      height: 400px;
+      background: rgba(250, 250, 250);
+  
+    }
+  }
+  @keyframes popupAnimeClose {
+    0% {
+        width: 480px;
+      height: 400px;
+      background: rgba(250, 250, 250);
+  
+    }
+    25% {
+        width: 60px;
+        height: 240px;
+        background: rgba(248, 248, 248,0.66);
+  
+    }
+    50% {
+        width: 60px;
+      height: 60px;
+      background: rgba(248, 248, 248,0.33);
+  
+  
+    }
+    100% {
+        width: 0px;
+        height: 0px;
+        background: rgba(240, 240, 240,0);
+  
+    }
+  }
+  /* Tombol */
+  .btn {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-top: 5px;
+    background: limegreen;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .game-container {
+    transform: scale(0.8) rotate(90deg);
+    margin-top: 70px;
+    margin-left: -40px;
+  }
+
+  .indicator{
+    margin-left: -5px;
+    margin-top: -50px;
+  }
+  .bot-indicator{
+    margin-left: -5px;
+  margin-top: -1000px;
+  }
+  
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#228B22">
+    <title>Permainan Tradisional Kalimantan</title>
+    <link rel="stylesheet" href="congklak.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,opsz,wght@0,8..30,100..900;1,8..30,100..900&family=Ubuntu:ital,wght@0,300;0,400;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="background-filter"></div>
+    <div class="not-background">
+        <div class="heads">
+        <p  class="iden">XI-B</p>
+        <p class="title">BADAKU</p>
+        <svg id="settingBtn" class="setting" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="Interface-Essential-Setting-Slide--Streamline-Pixel" height="24" width="24"><desc>Interface Essential Setting Slide Streamline Icon: https://streamlinehq.com</desc><title>interface-essential-setting-slide</title><g><path d="m19.42875 6.855 0 -2.2800000000000002 3.4275 0 0 -1.1475 -3.4275 0 0 -2.2874999999999996 -1.1400000000000001 0 0 5.715 1.1400000000000001 0z" fill="#000000" stroke-width="0.75"></path><path d="m19.42875 22.86 0 -2.2874999999999996 3.4275 0 0 -1.1475 -3.4275 0 0 -2.2800000000000002 -1.1400000000000001 0 0 5.715 1.1400000000000001 0z" fill="#000000" stroke-width="0.75"></path><path d="m22.856250000000003 11.43 -15.997499999999999 0 0 -2.2874999999999996 -1.1400000000000001 0 0 -1.1400000000000001 -1.1475 0 0 1.1400000000000001 -1.1400000000000001 0 0 2.2874999999999996 -2.2874999999999996 0 0 1.1400000000000001 2.2874999999999996 0 0 2.2874999999999996 1.1400000000000001 0 0 1.1400000000000001 1.1475 0 0 -1.1400000000000001 1.1400000000000001 0 0 -2.2874999999999996 15.997499999999999 0 0 -1.1400000000000001z" fill="#000000" stroke-width="0.75"></path><path d="M17.14125 22.86h1.1475V24h-1.1475Z" fill="#000000" stroke-width="0.75"></path><path d="M17.14125 15.997499999999999h1.1475v1.1475h-1.1475Z" fill="#000000" stroke-width="0.75"></path><path d="M17.14125 6.855h1.1475v1.1475h-1.1475Z" fill="#000000" stroke-width="0.75"></path><path d="M17.14125 0h1.1475v1.1400000000000001h-1.1475Z" fill="#000000" stroke-width="0.75"></path><path d="m17.14125 17.145 -1.1400000000000001 0 0 2.2800000000000002 -14.857499999999998 0 0 1.1475 14.857499999999998 0 0 2.2874999999999996 1.1400000000000001 0 0 -5.715z" fill="#000000" stroke-width="0.75"></path><path d="m16.00125 3.4275 -14.857499999999998 0 0 1.1475 14.857499999999998 0 0 2.2800000000000002 1.1400000000000001 0 0 -5.715 -1.1400000000000001 0 0 2.2874999999999996z" fill="#000000" stroke-width="0.75"></path></g></svg>
+        <div id="popupMenu" class="popup-menu">
+            <ul>
+            <li onclick="handleOption('contact')"><a href="https://wa.me/085220601860" target="_blank" style="text-decoration: none;">Contact Us</a></li>
+            <li onclick="handleOption('about')">About Us</li>
+            <li onclick="handleOption('wallpaper')"><a href="https://github.com/gavrielle0110" target="_blank" style="text-decoration: none;">GitHub</a></li>
+            <li id="btnMenyerah" style="display: none;" onclick="menyerahGame()">Menyerah</li>
+            <li id="btnKembali" style="display: none;" onclick="kembaliLanding()">Kembali</li>
+            </ul>
+          </div>
+        </div>
+        <div class="container">
+            <!-- HOME SECTION -->
+            <div class="home" id="homeSection">
+              <div class="main">
+                <!-- Box 1: Game -->
+                <div class="box" id="boxGame">
+                  <div class="cup">
+                    <img src="source/6016530211536063362.svg" alt="" style="width: 45px; height: 45px; margin-top: 15px;">
+                  </div>
+                  <p style="display: flex; justify-content: center; align-items: center; font-size: 17px; margin: 15px 0; text-align: center;">
+                    Jelajahi Permainan<br>Tradisional Badaku
+                  </p>
+                  <div class="start" id="startGameBtn">
+                    <svg class="button_start" viewBox="-0.5 -0.5 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" height="16" width="16">
+                      <path d="M12.755375 5.8453625c1.3261875 0.7212 1.3261875 2.588075 0 3.3092625L4.7478875 13.5090625C3.45896875 14.21 1.875 13.2976875 1.875 11.8544375V3.1455625c0-1.4432625 1.58396875-2.35555 2.87288125-1.6546375l8.00749375 4.3544375Z" stroke="#000000" stroke-width="1"></path>
+                    </svg>
+                    <strong style="color: #000;">MULAI</strong>
+                  </div>
+                </div>
+                <!-- Box 2: Cerita Rakyat -->
+                <div class="box">
+                  <div class="cup">
+                    <img src="source/5402751.png" alt="" style="width: 45px; height: 45px; margin-top: 15px;">
+                  </div>
+                  <p style="display: flex; justify-content: center; align-items: center; font-size: 17px; margin: 15px 0; text-align: center;">
+                    Jelajahi Permainan<br>Badaku
+                  </p>
+                  <div class="start" id="start_story">
+                    <svg class="button_start" viewBox="-0.5 -0.5 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" height="16" width="16">
+                        <desc>Global Streamline Icon</desc>
+                        <path d="M13.75 7.5c0 0.82075-0.1616875 1.6335-0.47575 2.39175-0.314125 0.7583125-0.7744375 1.4473125-1.3548125 2.0276875-0.580375 0.580375-1.269375 1.0406875-2.0276875 1.3548125C9.1335 13.5883125 8.32075 13.75 7.5 13.75c-0.82075 0-1.6334875-0.1616875-2.39176875-0.47575-0.7582875-0.314125-1.44728125-0.7744375-2.02765-1.3548125-0.5803625-0.580375-1.0407375-1.269375-1.35483125-2.0276875C1.4116625 9.1335 1.25 8.32075 1.25 7.5c0-0.82075 0.1616625-1.6334875 0.47575625-2.391775 0.3140875-0.75828125 0.7744625-1.447275 1.354825-2.02764375 0.58036875-0.5803625 1.2693625-1.0406875 2.02765-1.35483125C5.8665125 1.4116625 6.67925 1.25 7.5 1.25c0.82075 0 1.6335 0.1616625 2.39175 0.47575625 0.7583125 0.3140875 1.4473125 0.7744625 2.0276875 1.354825 0.580375 0.58036875 1.0406875 1.2693625 1.3548125 2.02765C13.5883125 5.8665125 13.75 6.67925 13.75 7.5Z" stroke="#000" stroke-width="1"></path>
+                        <path d="M10 7.5c0 0.82075-0.0646875 1.6335-0.1903125 2.39175-0.125625 0.7583125-0.30975 1.4473125-0.5419375 2.0276875-0.232125 0.580375-0.50775 1.0406875-0.8110625 1.3548125C8.153375 13.5883125 7.8283125 13.75 7.5 13.75c-0.3283125 0-0.653375-0.1616875-0.9566875-0.47575-0.3033375-0.314125-0.57893125-0.7744375-0.81108125-1.3548125-0.23214375-0.580375-0.41629375-1.269375-0.54193125-2.0276875C5.0646625 9.1335 5 8.32075 5 7.5c0-0.82075 0.0646625-1.6334875 0.1903-2.391775 0.1256375-0.75828125 0.3097875-1.447275 0.54193125-2.02764375 0.23215-0.5803625 0.50774375-1.0407375 0.81108125-1.35483125C6.846625 1.4116625 7.1716875 1.25 7.5 1.25c0.3283125 0 0.653375 0.1616625 0.9566875 0.47575625 0.3033125 0.3140875 0.5789375 0.7744625 0.8110625 1.354825 0.2321875 0.58036875 0.4163125 1.2693625 0.5419375 2.02765C9.9353125 5.8665125 10 6.67925 10 7.5Z" stroke="#000" stroke-width="1"></path>
+                        <path d="M1.25 7.5h12.5" stroke="#000" stroke-linecap="round" stroke-width="1"></path>
+                      </svg>
+                    <strong style="color: #000;">JELAJAH</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Popup Story Section -->
+            <div id="popupStory" class="popup-story">
+              <h1>Cara Bermain</h1>
+            
+                <p>  
+                  1. Dua pemain, masing-masing memiliki 7 lubang kecil dan 1 lumbung. <br>  
+                  2. Setiap lubang kecil berisi 7 biji, pemain mengambil dari lubangnya. <br>  
+                  3. Biji dibagikan searah jarum jam, termasuk lumbung sendiri. <br>  
+                  4. Jika biji terakhir di lumbung, dapat giliran lagi; jika di lubang kosong sendiri, ambil biji lawan. <br>  
+                  5. Permainan berakhir saat semua lubang kosong. <br>  
+                  6. Pemain dengan biji terbanyak di lumbung menang. <br>  
+                  </p>
+                  
+            
+            </div>
+            
+            <!-- CONGKLAK GAME SECTION (AWALNYA HIDDEN) -->
+            <div id="congklakContainer">
+              <div class="game-container">
+                <div id="bot-indicator" class="indicator bot-indicator">▼</div>
+                <div class="bot">Bot</div>
+                <div class="board">
+                  <div class="store" id="player-store">0</div>
+                  <div class="middle">
+                    <div class="row" id="row-top"></div>
+                    <div class="row" id="row-bottom"></div>
+                  </div>
+                  <div class="store" id="bot-store">0</div>
+                </div>
+                <div class="player">Player</div>
+                <div id="player-indicator" class="indicator player-indicator" style="display: none;">▲</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- MODAL WIN ALERT -->
+      <div id="winModal" class="modal">
+        <div class="modal-content">
+          <span id="closeModal" class="close">&times;</span>
+          <p id="winText"></p>
+          <button id="restartButton">Main Lagi</button>
+        </div>
+      </div>
+      
+  <!-- MODAL WIN ALERT -->
+  <div id="winModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <p id="winText"></p>
+      <button id="restartButton">Main Lagi</button>
+    </div>
+  </div>
+    <script src="congklak.js"></script>
+</body>
+</html>
