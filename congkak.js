@@ -49,54 +49,54 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // Animasi navbar
-window.addEventListener("DOMContentLoaded", () => {
-    const navbar = document.querySelector("nav");
-    const firstSection = document.querySelector("section:first-of-type");
+    window.addEventListener("DOMContentLoaded", () => {
+        const navbar = document.querySelector("nav");
+        const firstSection = document.querySelector("section:first-of-type");
 
-    if (!navbar || !firstSection) return;
+        if (!navbar || !firstSection) return;
 
-    const observerNavbar = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    navbar.classList.remove("fade-out-nav");
-                    navbar.classList.add("fade-in-nav");
-                } else {
-                    navbar.classList.remove("fade-in-nav");
-                    navbar.classList.add("fade-out-nav");
-                }
-            });
-        },
-        { threshold: 0.3 }
-    );
+        const observerNavbar = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        navbar.classList.remove("fade-out-nav");
+                        navbar.classList.add("fade-in-nav");
+                    } else {
+                        navbar.classList.remove("fade-in-nav");
+                        navbar.classList.add("fade-out-nav");
+                    }
+                });
+            },
+            { threshold: 0.3 }
+        );
 
-    observerNavbar.observe(firstSection);
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.getElementById('hamburger');
-    const menubar = document.querySelector('.menubar');
-
-    // Toggle menu
-    hamburger.addEventListener('click', function(e) {
-        e.stopPropagation();
-        menubar.classList.toggle('active');
-        hamburger.classList.toggle('hamburger-active');
+        observerNavbar.observe(firstSection);
     });
 
-    // Close menu klik di luar
-    document.addEventListener('click', function(e) {
-        if (!menubar.contains(e.target) && !hamburger.contains(e.target)) {
-            menubar.classList.remove('active');
-            hamburger.classList.remove('hamburger-active');
-        }
-    });
+    document.addEventListener('DOMContentLoaded', function () {
+        const hamburger = document.getElementById('hamburger');
+        const menubar = document.querySelector('.menubar');
 
-    // Close menu saat resize window ke desktop
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            menubar.classList.remove('active');
-            hamburger.classList.remove('hamburger-active');
-        }
+        // Toggle menu
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            menubar.classList.toggle('active');
+            hamburger.classList.toggle('hamburger-active');
+        });
+
+        // Close menu klik di luar
+        document.addEventListener('click', function(e) {
+            if (!menubar.contains(e.target) && !hamburger.contains(e.target)) {
+                menubar.classList.remove('active');
+                hamburger.classList.remove('hamburger-active');
+            }
+        });
+
+        // Close menu saat resize window ke desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                menubar.classList.remove('active');
+                hamburger.classList.remove('hamburger-active');
+            }
+        });
     });
-});

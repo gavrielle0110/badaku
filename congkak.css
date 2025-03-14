@@ -277,7 +277,9 @@ section {
 model-viewer {
     --auto-rotate-speed: 10deg; /* Ganti angka sesuai kecepatan yang diinginkan */
 }
-
+.animate-center{
+    display: none;
+}
 /* General mobile styling */
 @media (max-width: 768px) {
     body {
@@ -311,7 +313,37 @@ model-viewer {
         padding: 50px 20px;
         text-align: center;
     }
-    
+    .third-page {
+        height: auto !important;
+        padding: 20px 0 !important;
+        display: block !important;
+        overflow: visible !important;
+    }
+    .third-page > div {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        padding: 0 !important;
+    }
+
+    /* Sembunyikan animate-right */
+    .animate-right {
+        display: none !important;
+    }
+    .animate-left {
+        display: block !important;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: scale(0.8) !important;
+        margin: 30px auto !important;   
+        width: 80% !important;
+        height: auto !important;
+        min-height: 300px;
+    }
+.text-container{
+    padding-right: 50px;
+}
     .main-page h1 {
         font-size: 32px;
     }
@@ -333,19 +365,24 @@ model-viewer {
 .bait{
     display: none;
 }
-.box{
-    transform: scale(0.5);
+.bait1{
+    margin-top: 20px;
 }
-.d-congklak{
-    transform: scale(0.5);
+
+.d-congklak {
+    transform: scale(0.6) !important;
+    margin: 0 auto !important;
+    display: block !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    height: 300px !important;
 }
-.title-2{
-    font-size: large;
-    transform: translateX(0%) translateY(10%);
-}
-.animate-right{
+.title-2 {
     display: none;
 }
+
+
     /* Model viewer */
     model-viewer {
         width: 100%;
@@ -354,10 +391,9 @@ model-viewer {
 
     /* Info boxes */
     .box {
-        transform: scale(0.6);
-        margin: 10px auto;
-        position: static;
-        text-align: center;
+        transform: none !important;
+        margin: 20px auto !important;
+        position: static !important;
     }
     .hamburger {
         display: block; /* Tampilkan hanya di mobile */
@@ -379,4 +415,5 @@ model-viewer {
         top: 0;
         padding-top: 5rem;
     }
+    
 }
